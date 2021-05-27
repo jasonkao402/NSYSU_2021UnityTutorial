@@ -7,7 +7,7 @@ public class shoot : MonoBehaviour
     public Transform pos;
     public GameObject[] bulletbag;
     public GameObject[] burstFireBag;
-    public float maxtime, shootForce, offset, burstTime;
+    public float maxtime, shootForce, offset, burstTime, spread;
     private float nowtime;
     int i, len;
     public Animator animator;
@@ -21,7 +21,7 @@ public class shoot : MonoBehaviour
         if(nowtime <= 0)
         {
             if(Input.GetMouseButton(0)){
-                animator.SetTrigger("isFire");
+                //animator.SetTrigger("isFire");
                 //Rigidbody2D rb = Instantiate(bulletbag[(i++ % len)], transform.position + transform.up *offset, Quaternion.identity).GetComponent<Rigidbody2D>();
                 //rb.velocity = transform.up * shootForce;
                 StartCoroutine(Burstfire());
@@ -37,8 +37,9 @@ public class shoot : MonoBehaviour
         int l = burstFireBag.Length;
         for(int i = 0; i < l; i++)
         {
+            animator.SetTrigger("isFire");
             Rigidbody2D rb = Instantiate(burstFireBag[i], transform.position + transform.up *offset, Quaternion.identity).GetComponent<Rigidbody2D>();
-            rb.velocity = transform.up * shootForce;
+            rb.velocity = Quaternion.AngleAxis(Random.Range(-spread, spread), transform.forward) * transform.up * shootForce;
             yield return new WaitForSeconds(burstTime/l);
         }
     }

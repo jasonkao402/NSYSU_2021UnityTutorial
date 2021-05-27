@@ -327,10 +327,11 @@ MonoBehaviour:
   - {fileID: 1568345067850134053, guid: 448f98e7b785cc94aa405dc11a97b6c8, type: 3}
   - {fileID: 1568345067850134053, guid: 448f98e7b785cc94aa405dc11a97b6c8, type: 3}
   - {fileID: 1568345067850134053, guid: 448f98e7b785cc94aa405dc11a97b6c8, type: 3}
-  maxtime: 0.5
-  shootForce: 60
+  maxtime: 0.33
+  shootForce: 40
   offset: 1
-  burstTime: 0.3
+  burstTime: 0.18
+  spread: 5
   animator: {fileID: 714743143}
 --- !u!1 &238993787
 GameObject:
@@ -673,7 +674,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714743137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d085b771b6f0e848a2982e1c6197641, type: 3}
   m_Name: 
@@ -1025,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce90a3847da40e4e9d74bb418838bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tgt: {fileID: 1639851640}
+  tgt: {fileID: 714743142}
   lerpAmt: 0.1
 --- !u!81 &1168756357
 AudioListener:
@@ -1194,7 +1195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415765523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 476f8ef6dfa9f504fb2f8a010ab65975, type: 3}
   m_Name: 
@@ -1212,6 +1213,7 @@ MonoBehaviour:
   shootForce: 20
   offset: 1
   burstTime: 0
+  spread: 0
   animator: {fileID: 714743143}
 --- !u!1 &1639851635
 GameObject:
@@ -1355,7 +1357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639851635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 3.5, z: 0}
+  m_LocalPosition: {x: -6, y: 3.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 358777773}
@@ -1509,4 +1511,5 @@ MonoBehaviour:
   shootForce: 20
   offset: 1
   burstTime: 0
+  spread: 0
   animator: {fileID: 0}
